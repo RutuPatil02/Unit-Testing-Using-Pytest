@@ -1,0 +1,24 @@
+Unit Testing using Pytest
+
+File name(.py) & method name should start with 'test'
+
+In terminal execute test files
+>pytest
+
+****To skip a test add
+@pytest.mark.skip("Don't want to execute on current build")
+
+In terminal execute tests
+>pytest -v
+(v->verbose mode for more information like to see which test executed & which not)
+
+****To skip a test on condition
+a = 100
+
+@pytest.mark.skipif(a>100, reason="Don't want to execute on current build")
+
+******* To execute specific testcases (e.g. method including word 'registration')
+>pytest -k registration
+
+
+***** Grouping Test cases
