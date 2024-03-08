@@ -19,7 +19,6 @@ def environment_setup():
     # *******************Take runtime screenshot **************************
     # ********** before screenshot, scroll up using javascript **********
     driver.execute_script("window.scrollTo(0,220);")
-    # driver.get_screenshot_as_file("C:/Users/shara/PycharmProjects/LearnPyTest/Registration.png")
     Take_PageScreenShot.screen_shot(driver, "Registration")
     driver.close()
 
@@ -46,6 +45,7 @@ def test_registration_validate(environment_setup):
     # *********** Implicit wait till text in dropdown to appear ***************
     wait = WebDriverWait(driver=driver, timeout=100)
     wait.until(ec.text_to_be_present_in_element((By.ID, 'countryId'), 'India'))
+
     obj2 = Select(driver.find_element(by='id', value='countryId'))
     obj2.select_by_value('101')
     # obj2.select_by_visible_text('India')
